@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Text Size</title>
+    <style>
+        #dynamicText {
+            font-size: 5pt;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="dynamicText">Bigger Text</p>
+
+    <script>
+        let fontSize = 5;
+        let increasing = true;
+
+        function changeFontSize() {
+            const textElement = document.getElementById("dynamicText");
+
+            if (increasing) {
+                fontSize++;
+                if (fontSize >= 50) {
+                    increasing = false;
+                    textElement.innerHTML = "Smaller Text";
+                    textElement.style.color = "green";
+                }
+            } else {
+                fontSize--;
+                if (fontSize <= 5) {
+                    clearInterval(interval);
+                }
+            }
+
+            textElement.style.fontSize = fontSize + "pt";
+        }
+
+        const interval = setInterval(changeFontSize, 10);
+    </script>
+
+</body>
+</html>

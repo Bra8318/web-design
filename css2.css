@@ -1,0 +1,35 @@
+form{
+    background-color: aliceblue;
+    width: 30%;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10;
+
+}
+body{
+    
+    background-color: grey;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding:0;
+    display: flex;
+    justify-content: center;
+
+}
+input[type='submit'] {background: green;
+    color:white;
+    font-size: medium;}
+    input[type='reset'] {background: red;
+    color:white;
+    font-size: medium;}
+    lable{display:block;
+    margin-bottom: 8px;}
+    
+    input,textarea,select{width: 100%;
+        border: 1px solid black;
+        box-sizing: border-box;
+        cursor: pointer;
+        margin-bottom: 12px;
+        padding: 8px;
+    
+    }

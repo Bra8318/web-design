@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Student Registration Form</legend>
+    <form onsubmit="return validation()">
+        <label for="name">Enter Name:</label>
+        <input type="text" id="name" name ="name" placeholder="Enter a valid name"> <br><br>
+        <label for="password">Enter password:</label>
+        <input type="password" id="password" name="password"><br><br>
+        <label for="repassword">Enter again password:</label>
+        <input type="text" id="repassword" name="repassword"><br><br>
+        <label for="roll_no">Roll Number:</label>
+        <input type="int" id="roll_no" name ="roll_no" placeholder="Enter a valid roll_no"><br><br>
+        <label for="email">Enter Email_ID</label>
+        <input type="text" name="email" id="email" placeholder="Enter a valid Email_ID"><br><br>
+        <label for="dob">Date Of Birth</label>
+        <input type="text" id="dob" name="dob" placeholder="YYYY-MM-DD"><br><br>
+        <label for="gender">Gender</label>
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="gender" value = "female">
+        <label for="other">Others</label>
+        <input type="radio" id="other" name="gender" value="other"><br><br>
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address"><br><br>
+        <label for="text">Write Something</label>
+        <textarea name="text" id="text"></textarea><br><br>
+
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+
+    </form>
+</fieldset>
+
+<script>
+    function validation(){
+        var name = document.getElementById("name").value;
+        var roll = document.getElementById("roll_no").value;
+        var date = document.getElementById("dob").value;
+        var email = document.getElementById("email").value;
+        var pass = document.getElementById("password").value;
+        var repass = document.getElementById("repassword").value;
+
+        var pattern_of_name = /^[A-Za-z\s]+$/;
+        var pattern_of_roll_number = /^\d{8}$/;
+        var pattern_of_dob = /^\d{4}-\d{2}-\d{2}$/;
+        var pattern_of_email = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        var valid = true;
+        var error = " ";
+
+        if(!pattern_of_name.test(name)){
+            valid = false;
+            error += "Enter a proper valid name \n";
+        }
+
+        if(!pattern_of_roll_number.test(roll)){
+            valid = false;
+            error += "Enter a valid 8 digit number \n";
+        }
+
+        if(!pattern_of_dob.test(date)){
+            valid = false;
+            error += "Enter a valid foramatted date of birth \n";
+        }
+
+        if(!pattern_of_email.test(email)){
+            valid = false;
+            error += "Enter a valid email id \n";
+        }
+
+        if(!valid){
+            alert(error);
+        }
+
+        if (pass !== repass){
+            valid = false;
+            error += "Password is not mathed \n Please enter correct password";
+        }
+        return validation();
+
+    }
+</script>
+</body>
+</html>

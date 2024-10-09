@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Name</title>
+    <style>
+    label {
+        display: block;
+        margin: 10px 0;
+    }
+    #result {
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+    <form id="fullName">
+    <label for="name">Enter Full Name</label>
+    <input type="text" id = "name" name="name">
+    <button type="button" onclick="splitName()">Submit</button>
+    </form>
+
+    <div id="result">
+        <label> First Name: <span id="firstName">NA</span></label><br>
+        <label> Middle Name: <span id="middleName">NA</span></label><br>
+        <label> Last Name: <span id="lastName">NA</span></label>
+    </div>
+
+
+    <script>
+        function splitName(){
+            var name = document.getElementById("name").value.trim();
+            let partName = name.split(" ");
+
+            let FirstName = partName[0];
+            let MiddleName = partName.length > 2  ? partName.slice(1,-1).join(" ") : NA;
+            let LastName = partName.length > 1 ? partName[(partName.length -1)] : NA;
+
+            document.getElementById("firstName").textContent = FirstName;
+            document.getElementById("middleName").textContent = MiddleName;
+            document.getElementById("lastName").textContent = LastName;
+
+
+        }
+    </script>
+</body>
+</html>

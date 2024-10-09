@@ -1,0 +1,56 @@
+body{font-family:'Courier New', Courier, monospace;
+background-image: url('RAMANUJAN COLLEGE.jpg') ;
+background-size: 100% ;
+margin: 0%;
+padding: 0%;}
+
+header{
+    display: block;
+    unicode-bidi: isolate;
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.head{
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.head h1{
+    color: red;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin: 10px;
+}
+.head h2{
+    color: black;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+.head p{
+    color: black;
+    font-size: 20px;
+}
+
+
+nav{text-align: center;
+    color:white;
+    background-color:rgba(255, 99, 71, 0.849);
+    margin:10px;
+    font:bold;
+}
+
+nav a{padding:10px 20px;
+text-decoration: dashed;
+margin: 0 10px;
+display: inline-block;
+font-size: 15px;
+font-weight: bold;
+transition: background-color 0.3s ease;}
+
+nav a:hover{background-color:blue;}
